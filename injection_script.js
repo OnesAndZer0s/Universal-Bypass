@@ -744,6 +744,7 @@ domainBypass("universal-bypass.org",()=>{
 	window.universalBypassExternalVersion="UNIVERSAL_BYPASS_EXTERNAL_VERSION"
 	window.universalBypassInjectionVersion="UNIVERSAL_BYPASS_INJECTION_VERSION"
 })
+
 ensureDomLoaded(()=>{
 	if(ignoreCrowdBypass)
 	{
@@ -1659,6 +1660,7 @@ ensureDomLoaded(()=>{
 			a.href+="#bypassClipboard="+location.pathname.replace(/[^a-zA-Z0-9]/g,"")+a.parentNode.firstChild.textContent.toLowerCase().split(" ").join("").split("–").join("")+a.textContent.trim().toLowerCase()
 		}
 	}))
+	domainBypass(/brainly\.(com|in)/, () => {localStorage.clear();sessionStorage.clear();})
 	domainBypass("ad4msan.com",()=>document.querySelectorAll("a[href^='https://ad4msan.com?9c2a6bf968=']").forEach(a=>{
 		if(a.firstChild.tagName=="IMG")
 		{
